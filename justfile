@@ -2,5 +2,5 @@ _default:
 	@just -l -u
 
 # Run benchmarks.
-benchmark *args:
-  go test -bench . -benchmem {{args}}
+benchmark regexp='.' *args='':
+  go test -bench {{regexp}} -benchmem {{args}}
