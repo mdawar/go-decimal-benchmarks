@@ -1,6 +1,7 @@
 package main_test
 
 import (
+	"strconv"
 	"testing"
 
 	"github.com/alpacahq/alpacadecimal"
@@ -23,6 +24,15 @@ func BenchmarkParsing(b *testing.B) {
 
 	for _, value := range cases {
 		b.Run(value, func(b *testing.B) {
+			b.Run("strconv", func(b *testing.B) {
+				for range b.N {
+					_, err := strconv.ParseFloat(value, 64)
+					if err != nil {
+						b.Fatal(err)
+					}
+				}
+			})
+
 			b.Run("shopspring", func(b *testing.B) {
 				for range b.N {
 					_, err := shopspring.NewFromString(value)
