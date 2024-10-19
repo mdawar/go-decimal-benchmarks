@@ -1,5 +1,9 @@
 # Go Decimal Packages Benchmarks
 
+### Benchmark Results
+
+[Benchmark Workflow](https://github.com/mdawar/go-decimal-benchmarks/actions/workflows/benchmark.yml)
+
 ### Run Benchmarks
 
 ```sh
