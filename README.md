@@ -8,6 +8,8 @@
 
 ```sh
 just benchmark
+# Or
+go test -bench . -benchmem
 ```
 
 ### Run Package Benchmarks
@@ -19,4 +21,15 @@ just package eric
 just package apd
 just package govalues
 just package udecimal
+```
+
+Without `just`:
+
+```sh
+go test -bench Benchmark.*/.*/shopspring -benchmem
+go test -bench Benchmark.*/.*/alpaca -benchmem
+go test -bench Benchmark.*/.*/eric -benchmem
+go test -bench Benchmark.*/.*/apd -benchmem
+go test -bench Benchmark.*/.*/govalues -benchmem
+go test -bench Benchmark.*/.*/udecimal -benchmem
 ```
